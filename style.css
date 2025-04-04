@@ -1,126 +1,118 @@
-:root {
-  --bg-color: #f5f5f5;
-  --text-color: #333;
-  --primary-color: #007bff;
-  --nav-bg: #222;
-  --footer-bg: #222;
-}
-
-body.dark-mode {
-  --bg-color: #1a1a1a;
-  --text-color: #eee;
-  --nav-bg: #111;
-  --footer-bg: #111;
-}
-
+ /* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Body Styling */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: all 0.3s ease;
   line-height: 1.6;
-  transition: all 0.3s ease-in-out;
+  padding: 20px;
 }
 
+/* Header */
 header {
-  background: var(--nav-bg);
-  padding: 1rem 2rem;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #333;
+  color: #fff;
 }
 
+header h1 span {
+  color: #ffcc00;
+}
+
+/* Nav (optional future use) */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
+  margin-top: 20px;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
+/* Section Styling */
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
 }
 
-nav ul li {
-  margin-left: 20px;
+section:hover {
+  transform: scale(1.01);
 }
 
-nav ul li a, #toggle-mode {
-  color: white;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
+/* Projects */
+.project {
+  margin-bottom: 20px;
+  border-left: 5px solid #ffcc00;
+  padding-left: 15px;
+}
+
+/* Contact */
+.contact a {
+  color: #007BFF;
   text-decoration: none;
 }
 
-#hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: var(--primary-color);
-  color: white;
-  transition: background 0.3s;
+.contact a:hover {
+  text-decoration: underline;
 }
 
-.highlight {
-  color: yellow;
-}
-
-section {
-  padding: 2rem;
-}
-
-.project {
-  background: white;
-  color: #333;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-body.dark-mode .project {
-  background: #333;
-  color: white;
-}
-
-.project:hover {
-  transform: scale(1.02);
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 20px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: var(--footer-bg);
-  color: white;
+  margin-top: 40px;
+  color: #888;
 }
 
-.fade-in {
-  animation: fadeIn 1.5s ease-in;
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode section {
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    padding: 15px;
+  }
+
+  .toggle-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
 }
